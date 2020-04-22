@@ -42,8 +42,13 @@ var audioMuteBtn = document.querySelector("#audmute");
 videoMuteBtn.addEventListener("click",function(){
     if(vidtrackstate){
         localVideo.srcObject.getVideoTracks()[0].enabled=false;
+        videoMuteBtn.textContent="Unmute Video";
+        videoMuteBtn.className="ui inverted green button";
+
     }else {
         localVideo.srcObject.getVideoTracks()[0].enabled=true;
+        videoMuteBtn.textContent="Mute Video";
+        videoMuteBtn.className="ui inverted red button";
     }
     vidtrackstate=!vidtrackstate;
 })
@@ -51,8 +56,12 @@ videoMuteBtn.addEventListener("click",function(){
 audioMuteBtn.addEventListener("click",function(){
     if(audtracktate){
         localVideo.srcObject.getAudioTracks()[0].enabled=false;
+        audioMuteBtn.textContent="Unmute Audio";
+        audioMuteBtn.className="ui inverted green button";
     }else {
         localVideo.srcObject.getAudioTracks()[0].enabled=true;
+        audioMuteBtn.textContent="Mute Audio";
+        audioMuteBtn.className="ui inverted red button";
     }
     audtracktate=!audtracktate;
 })
